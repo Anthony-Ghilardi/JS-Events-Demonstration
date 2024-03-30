@@ -24,12 +24,14 @@
             // Attaching an onclick event handler
             div.onclick = function(e) {
                 e.target.style.backgroundColor = 'lightblue'
+                
 
                 // Let the browser finish rendering of background color before showing alert
                 setTimeout(() => {
                     alert('target = ' + e.target.tagName)
                     e.target.style.backgroundColor = ''
                 }, 0)
+                
             }
         </script>
     </body> 

@@ -14,7 +14,8 @@
         <form action="/examples/html/action.js" method="post" id="users">
             <label>First Name:</label>
             <input type="text" name="first-name" id="firstName">
-            <input type="submit" value="Submit" id="submitBtn">
+            <input type="submit" value="Submit" class="submitBtn">
+            <input type="submit" value="Submit" class="submitBtn">
         </form>
         <div id="explanation">
             <p>
@@ -23,13 +24,20 @@
         </div>
 
         <script>
-            var btn = document.getElementById('submitBtn')
+            var btn = document.querySelectorAll('.submitBtn')
+            console.log(btn)
             
-            btn.addEventListener('click', function(e) {
+            btn.forEach((button) => {
+                console.log(button);
+                button.addEventListener('click', function(e) {
                 e.preventDefault()
                 alert(`Sorry, ${document.getElementById('firstName').value}, the preventDefault() method won't let you submit this form!`)
                 document.getElementById('explanation').style.visibility = 'visible'
-            })
+            });
+        });
+            
+            
+
         </script>
     </body>
 </html>
